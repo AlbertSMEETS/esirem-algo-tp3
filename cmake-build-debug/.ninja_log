@@ -1,3 +1,7 @@
 # ninja log v5
 0	330	7212379018216448	CMakeFiles/esirem_algo_tp3.dir/main.c.obj	bbb9fa20c0d5fecc
 332	888	7212379023609949	esirem_algo_tp3.exe	b5f698b32b06733d
+1	623	7212389533548852	CMakeFiles/esirem_algo_tp3.dir/main.c.obj	bbb9fa20c0d5fecc
+625	1380	7212389540952106	esirem_algo_tp3.exe	b5f698b32b06733d
+1	389	7212397353610666	CMakeFiles/esirem_algo_tp3.dir/main.c.obj	bbb9fa20c0d5fecc
+392	1689	7212397358430998	esirem_algo_tp3.exe	b5f698b32b06733d
