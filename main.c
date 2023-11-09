@@ -1,6 +1,7 @@
 #include <stdio.h>
 
+enum SolutionType {NONE = 0, ONE = 1, TWO = 2};
+
 int main() {
-    printf("Hello, World!\n");
     return 0;
 }
