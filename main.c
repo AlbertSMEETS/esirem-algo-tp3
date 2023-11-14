@@ -73,16 +73,26 @@ struct Solution resolveTwo(int a, int b, int c){
     return sol;
 }
 
-struct Solution resolve(int a, int b, int c){
-    if(a==0){
-        return resolveOne(b,c);
-    }
-    else{
-        return resolveTwo(a,b,c);
+struct Solution resolve(int a, int b, int c) {
+    if (a == 0) {
+        return resolveOne(b, c);
+    } else {
+        return resolveTwo(a, b, c);
     }
 }
 
+struct Solution decode(char eq[]){
+    int a,b,c;
+    int i = 0;
+    int sign= 0;
+    if(eq[0]=='-'){
+        sign = 1;
+    }
+    while(eq[i]!='\0'){
 
+        i+=1;
+    }
+}
 
 int main() {
     return 0;
