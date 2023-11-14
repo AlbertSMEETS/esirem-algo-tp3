@@ -82,18 +82,110 @@ struct Solution resolve(int a, int b, int c) {
 }
 
 struct Solution decode(char eq[]){
-    int a,b,c;
+    int a = 0,b = 0,c = 0,a1 = 0,a2 = 0,b1 = 0,b2 = 0,c1 = 0,c2 = 0, c0=0;
     int i = 0;
-    int sign= 0;
-    if(eq[0]=='-'){
-        sign = 1;
+    int signA = 0, signB = 0, signC = 0;
+    if(eq[0]=='-'){ //Premier boucle permettant de stocker quelque pars le premier - puis de sotcker la valeur de a
+        signA = 1;
+        while(eq[i+1]!='x') {
+            eq[i] = a1;
+            a2 = a2 * 10 + a1;
+            i += 1;
+        }
     }
-    while(eq[i]!='\0'){
-
-        i+=1;
+    else {
+        while(eq[i]!='x'){ // Premier boucle permettant de stocker quelque pars la valeurs de 1 sans le moins
+            eq[i]=a1;
+            a2=a2*10+a1;
+            i+=1;
+        }
+    }
+    if(eq[i+1] == '`'){
+        if(eq[i+2]=='-'){
+            signB = 1;
+            while(eq[i+3]!='x') {
+                eq[i] = b1;
+                b2 = b2 * 10 + b1;
+                i += 1;
+            }
+        }
+        if(eq[i+2]=='+'){
+            while(eq[i+3]!='x') {
+                eq[i] = b1;
+                b2 = b2 * 10 + b1;
+                i += 1;
+            }
+        }
+        if(eq[i+1]=='-'){
+            signC = 1;
+            while(eq[i+3]!='x') {
+                eq[i] = c1;
+                c2 = c2 * 10 + c1;
+                i += 1;
+            }
+        }
+        if(eq[i+1]=='+'){
+            while(eq[i+2]!='x') {
+                eq[i] = c1;
+                c2 = c2 * 10 + c1;
+                i += 1;
+            }
+        }
+    }
+    if(eq[i+1]=='-'){
+        signB = 1;
+        while(eq[i+2]!='x') {
+            eq[i] = b1;
+            b2 = b2 * 10 + b1;
+            i += 1;
+            c0=1;
+        }
+    }
+    if(eq[i+1]=='+'){
+        while(eq[i+2]!='x') {
+            eq[i] = b1;
+            b2 = b2 * 10 + b1;
+            i += 1;
+            c0=1;
+        }
+    }
+    if(c0==1){
+        if(signA==1){
+            a = -a2;
+        }
+        else{
+            a = a2;
+        }
+        if(signB==1){
+            b = -b2;
+        }
+        else{
+            b = b2;
+        }
+    }
+    else{
+        if(signB==1){
+            a = -a2;
+        }
+        else{
+            a = a2;
+        }
+        if(signB==1){
+            b = -b2;
+        }
+        else{
+            b = b2;
+        }
+        if(signC==1){
+            c = -c2;
+        }
+        else{
+            c = c2;
+        }
     }
 }
 
-int main() {
+
+int main(){
     return 0;
 }
