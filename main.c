@@ -30,22 +30,6 @@ void ShowSolution(struct Solution sol){
     }
 }
 
-void test(){
-    struct Solution sol1,sol2,sol3,sol4,sol5,sol6;
-    int i = 0;
-
-    struct Solution solution[i];
-    solution[0]=sol1;
-    solution[1]=sol2;
-    solution[2]=sol3;
-    solution[3]=sol4;
-    solution[4]=sol5;
-    solution[5]=sol6;
-
-    for(i=0;i<=sizeof(solution);i++){
-        ShowSolution(solution[i]);
-    }
-}
 
 struct Solution resolveOne(int a, int b){
     struct Solution sol;
@@ -82,6 +66,7 @@ struct Solution resolve(int a, int b, int c) {
 }
 
 struct Solution decode(char eq[]){
+    struct Solution sol;
     int a = 0,b = 0,c = 0,a1 = 0,a2 = 0,b1 = 0,b2 = 0,c1 = 0,c2 = 0, c0=0;
     int i = 0;
     int signA = 0, signB = 0, signC = 0;
@@ -182,6 +167,26 @@ struct Solution decode(char eq[]){
         else{
             c = c2;
         }
+    }
+    sol = resolve(a,b,c);
+    return sol;
+}
+
+void test(){
+    struct Solution sol1,sol2,sol3,sol4,sol5,sol6;
+    int i = 0;
+
+
+    struct Solution solution[i];
+    solution[0]=sol1;
+    solution[1]=sol2;
+    solution[2]=sol3;
+    solution[3]=sol4;
+    solution[4]=sol5;
+    solution[5]=sol6;
+    sol1 = decode("-3x`+2x+3");
+    for(i=0;i<=sizeof(solution);i++){
+        ShowSolution(solution[i]);
     }
 }
 
